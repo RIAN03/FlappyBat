@@ -1,0 +1,5 @@
+{
+  "name": "Batman: Gotham Glide",
+  "description": "A Flappy Bird style game where you guide Batman through the treacherous skyline of Gotham, avoiding buildings to get the highest score.",
+  "requestFramePermissions": []
+}

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Batman: Gotham Glide</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Orbitron', sans-serif;
+        overflow: hidden;
+      }
+      .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+      }
+      .text-glow {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #007BFF, 0 0 20px #007BFF, 0 0 25px #007BFF;
+      }
+      .box-glow-blue {
+        box-shadow: 0 0 5px #007BFF, 0 0 10px #007BFF;
+      }
+       .box-glow-yellow {
+        box-shadow: 0 0 5px #FFD700, 0 0 10px #FFD700;
+      }
+      .player-batman {
+        background-color: #111;
+        clip-path: polygon(0% 25%, 50% 100%, 100% 25%, 80% 0%, 50% 20%, 20% 0%);
+      }
+      @keyframes twinkle {
+        0%, 100% { opacity: 0.5; }
+        50% { opacity: 1; }
+      }
+      .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        box-shadow: 0 0 5px #fff, 0 0 10px #fff;
+        animation: twinkle 4s infinite ease-in-out;
+      }
+      .moon {
+        position: absolute;
+        top: 10%;
+        right: 15%;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        /* The shadow creates the crescent shape */
+        box-shadow: 15px -15px 0 0 #f0f0f0;
+        filter: drop-shadow(0 0 10px #fff);
+      }
+
+      /* Splash Screen Animations */
+      @keyframes fadeInScale {
+        0% {
+          opacity: 0;
+          transform: scale(0.8);
+        }
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+
+      @keyframes fadeOut {
+          0% { opacity: 1; }
+          100% { opacity: 0; }
+      }
+
+      .splash-screen-fade-out {
+          animation: fadeOut 0.5s ease-in forwards;
+          animation-delay: 2.5s;
+      }
+
+      .batman-logo-container {
+          animation: fadeInScale 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+      }
+
+      /* New CSS for Batman Logo */
+      .batman-logo-wrapper {
+        position: relative;
+        width: clamp(300px, 40vw, 400px);
+        aspect-ratio: 1.7 / 1;
+      }
+
+      .batman-logo, .batman-logo-glow {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      .batman-logo-glow {
+        background: radial-gradient(ellipse at 50% 60%, #900 0%, #600 25%, rgba(0,0,0,0) 65%);
+        transform: scale(1.2, 1.5);
+      }
+
+      .batman-logo {
+        background-color: #000;
+        clip-path: polygon(50% 100%, 0 30%, 15% 40%, 40% 30%, 45% 20%, 50% 35%, 55% 20%, 60% 30%, 85% 40%, 100% 30%);
+      }
+      
+      /* Gothic Rain Effect */
+      @keyframes rain-fall {
+        0% {
+          transform: translateY(-100px);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh);
+          opacity: 0;
+        }
+      }
+      .rain-drop {
+        position: absolute;
+        bottom: 100%;
+        width: 2px;
+        height: 80px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.2) 100%);
+        animation: rain-fall linear infinite;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
